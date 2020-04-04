@@ -1,0 +1,28 @@
+.container-fluid {
+  padding-top: 50px;
+  padding-left: 0;
+  padding-right: 0;
+  margin-right: 0;
+}
+
+.row {
+  margin-left: 0;
+}
+
+h1 {
+  padding: 10px;
+}
+
+#formGroup {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.form-control {
+  margin-right: 10px;
+}
+
+.pagination {
+  display: inline-block;
+}

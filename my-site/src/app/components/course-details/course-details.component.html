@@ -1,0 +1,14 @@
+<div class="description">
+  <h4>Description:</h4>
+  {{course.description}}
+  <app-course-rate (changeCourseRate)="changeCourseRate($event)" [role]="isParticipant()"
+    (addRatePart)=" addRatePart($event)" [generalRate]="course.rating" [rateList]="course.rateList">
+  </app-course-rate>
+  <br>
+  <div *ngIf="isParticipant()" class="alert alert-danger" role="alert">
+    You are already signed for this course
+  </div>
+  <button *ngIf="haveAccess()" (click)=onSign() type='button' class="btn btn-info signForCourse">
+    <strong>Sign for course</strong>
+  </button>
+</div>

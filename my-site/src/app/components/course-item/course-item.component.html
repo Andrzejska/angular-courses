@@ -1,0 +1,25 @@
+<span>
+  <div class="col mb-12">
+    <div class="card">
+      <img src='{{course.imgScr}}' class="card-img-top" alt="Here we go">
+      <button class="btn btn-primary" (click)=showDetails()>Go to course
+      </button>
+      <app-course-details [id]="id" *ngIf='isDescriptionOpen'></app-course-details>
+      <button *ngIf="haveAccess()" type='button' class="btn btn-info delete">
+        <strong>Edit</strong>
+      </button>
+      <button *ngIf="haveAccess()" type="button" class="btn btn-dark a-btn-slide-text delete"
+        (click)=onDelete(course.id)><strong>Delete</strong>
+      </button>
+      <div class="card-body" [ngStyle]="{'background-color' :((id % 4 == 0) || (id%4 == 3))? 'white' : 'gray'}">
+        <h5 class="card-title"><strong>{{course.name}}</strong></h5>
+        <p class="card-text">
+          <small> Course studing format: {{course.form}}</small><br>
+          <small>Course semestr:{{course.semestr}}</small><br>
+          <small>Course capasity:{{course.seats}}</small><br>
+          <small>Course ETCS:{{course.points}}</small>
+        </p>
+      </div>
+    </div>
+  </div>
+</span>

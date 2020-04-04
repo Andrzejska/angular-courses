@@ -1,0 +1,38 @@
+span {
+  display: flex;
+  padding: 10px;
+}
+
+
+.rm {
+  height: 50%;
+  text-align: justify;
+}
+
+.rm:hover {
+  background: lighten(red, 20%);
+}
+
+small {
+  position: static;
+  font-size: .8rem;
+}
+
+button {
+  border-radius: 0;
+}
+
+.courseGo {
+  position: absolute;
+  margin-top: 2%;
+  margin-left: 1%;
+  height: 35%;
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+img {
+  height: 100%;
+  width: 100%;
+}

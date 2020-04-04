@@ -1,0 +1,28 @@
+<app-nav-bar></app-nav-bar>
+<div class="container-fluid">
+  <h1>AGH COURSES</h1>
+  <div class="row">
+    <section class="col-10 offset-1 col-md-8 offset-md-2 ">
+      <div class="form-group " id="formGroup">
+        <input type="text" class="form-control" placeholder="Search by Name" [(ngModel)]="searchTerm" />
+        <input type="text" class="form-control" placeholder="Search by ECTS" [(ngModel)]="searchTermECTS" />
+        <input type="text" class="form-control" placeholder="Search by Semester" [(ngModel)]="searchTermSemester" />
+        <input type="text" class="form-control" placeholder="Search by Rate" [(ngModel)]="searchTermRate" />
+      </div>
+    </section>
+  </div>
+  <div class="row">
+    <div class="container justify-content-center">
+      <div class="container-fluid row row-cols-1 row-cols-md-2 justify-content-center">
+        <app-course-item
+          *ngFor="let course of pageOfItems | searchPipe:searchTerm | searchPipeECTS:searchTermECTS | searchPipeSemester:searchTermSemester | searchPipeRate:searchTermRate;index as i "
+          [course]="course" [id]="course.id" (deleteCourse)=removeCourse(course)>
+        </app-course-item>
+      </div>
+      <div class="pagination">
+        <jw-pagination [items]="courses" (changePage)="onChangePage($event) "></jw-pagination>
+      </div>
+      <br>
+      <app-new-course *ngIf="haveAccess()"></app-new-course>
+    </div>
+  </div>

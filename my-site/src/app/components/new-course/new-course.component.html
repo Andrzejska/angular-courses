@@ -1,0 +1,48 @@
+<div class="addButton" (click)="openAddForm()">
+  <img src="../../../assets/img/plus.svg" alt="add">
+</div>
+
+<form [formGroup]="addForm" id="addForm" [style.transform]="setTransformAddForm()" onsubmit="return false"
+  autocomplete="on">
+
+  <h1>Add course</h1>
+  <div class="errorText" [style.display]="displayErrorText()">Not all fields was filled correctly</div>
+  <div class="form-group">
+    <label for="inputName">Name</label>
+    <input formControlName="name" type="text" class="form-control" id="inputName" placeholder="Name">
+  </div>
+
+  <div class="form-group">
+    <label for="inputECTS">ETCS</label>
+    <input formControlName="ects" type="text" class="form-control" id="inputECTS" placeholder="ECTS">
+  </div>
+
+  <div class="form-group">
+    <label for="inputSemestr">Number of semestr</label>
+    <input formControlName="semestr" type="text" class="form-control" id="inputSemestr" placeholder="Semestr">
+  </div>
+
+  <div class="form-group">
+    <label for="inputForm">Form of studing</label>
+    <input formControlName="form" type="text" class="form-control" id="inputForm" placeholder="Form">
+  </div>
+
+  <div class="form-group">
+    <label for="capacity">Capacity</label>
+    <input formControlName="capacity" type="text" class="form-control" id="inputCapacity" placeholder="Capacity">
+  </div>
+
+  <div class="form-group">
+    <label for="inputImg">Image</label>
+    <input formControlName="img" type="text" class="form-control" id="inputImg" placeholder="Image Source">
+  </div>
+
+  <div class="form-group">
+    <label for="inputDescription">Description</label>
+    <input formControlName='description' type='text' class="form-control" id="inputDescription"
+      placeholder="Description">
+
+  </div>
+
+  <button type="button " class="btn  btn-primary" (click)="onSubmit()">Submit</button>
+</form>
